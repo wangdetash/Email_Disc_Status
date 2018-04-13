@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SMTPFROM=user@gmail.com
+SMTPTO=user@hotmail.com
+SMTPSERVER=smtp.googlemail.com:587
+SMTPUSER=USERNAME
+SMTPPASSWORD=PASSWORD
+SUBJECT="SMTP protocol test"
+MESSAGEBODY="Protocol Test successful!"
+
+sendEmail -f $SMTPFROM -t $SMTPTO -s $SMTPSERVER -u $SUBJECT -m $MESSAGEBODY -xu $SMTPUSER -xp $SMTPPASSWORD -o tls=yes
