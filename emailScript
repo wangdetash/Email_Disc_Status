@@ -7,7 +7,8 @@ SMTPUSER=username
 SMTPPASSWORD=PASSWORD
 SUBJECT="SMTP protocol test"
 
-df -h > /tmp/discusage.txt
+df -h | grep Filesystem > /tmp/discusage.txt
+df -h | grep sda5 >> /tmp/discusage.txt
 
 sendEmail -f $SMTPFROM -t $SMTPTO -s $SMTPSERVER -u $SUBJECT  -xu $SMTPUSER -xp $SMTPPASSWORD -o tls=yes -o message-file=/tmp/discusage.txt
 
